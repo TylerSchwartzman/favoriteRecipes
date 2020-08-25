@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="138" id="ZjV-YQ-Uxi" customClass="MealCell" customModule="FavoriteRecipes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="521" height="138"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZjV-YQ-Uxi" id="uAb-VV-c8m">
+                <rect key="frame" x="0.0" y="0.0" width="521" height="138"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="top" spacing="2" translatesAutoresizingMaskIntoConstraints="NO" id="GkB-vH-JJp">
+                        <rect key="frame" x="132" y="38.5" width="389" height="61"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7rL-sy-ouw">
+                                <rect key="frame" x="0.0" y="0.0" width="89.5" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Category" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NI2-lh-GXU">
+                                <rect key="frame" x="0.0" y="22.5" width="106" height="19.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Meal Region" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dbs-Ax-A5u">
+                                <rect key="frame" x="0.0" y="44" width="79.5" height="17"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
+                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="ZNU-4z-Wpt">
+                        <rect key="frame" x="20" y="19" width="100" height="100"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="100" id="kPz-WD-Odx"/>
+                            <constraint firstAttribute="height" constant="100" id="x7X-AQ-3bY"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+                <constraints>
+                    <constraint firstAttribute="trailing" secondItem="GkB-vH-JJp" secondAttribute="trailing" id="6zU-HZ-CPa"/>
+                    <constraint firstItem="GkB-vH-JJp" firstAttribute="leading" secondItem="ZNU-4z-Wpt" secondAttribute="trailing" constant="12" id="SWO-YQ-fph"/>
+                    <constraint firstItem="ZNU-4z-Wpt" firstAttribute="top" secondItem="uAb-VV-c8m" secondAttribute="topMargin" constant="8" id="d0F-t2-QNX"/>
+                    <constraint firstItem="GkB-vH-JJp" firstAttribute="centerY" secondItem="uAb-VV-c8m" secondAttribute="centerY" id="nWM-Rs-zZJ"/>
+                    <constraint firstItem="ZNU-4z-Wpt" firstAttribute="leading" secondItem="uAb-VV-c8m" secondAttribute="leadingMargin" id="qsX-fz-0Cd"/>
+                </constraints>
+            </tableViewCellContentView>
+            <connections>
+                <outlet property="mealCategoryLabel" destination="NI2-lh-GXU" id="lnG-yv-eoR"/>
+                <outlet property="mealImage" destination="ZNU-4z-Wpt" id="poO-Rq-6Im"/>
+                <outlet property="mealNameLabel" destination="7rL-sy-ouw" id="5f5-dj-Xwb"/>
+                <outlet property="mealRegionLabel" destination="Dbs-Ax-A5u" id="u7O-Qf-7h5"/>
+            </connections>
+            <point key="canvasLocation" x="-10.869565217391305" y="-66.294642857142861"/>
+        </tableViewCell>
+    </objects>
+</document>
