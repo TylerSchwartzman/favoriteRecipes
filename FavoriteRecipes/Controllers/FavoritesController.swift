@@ -9,7 +9,7 @@
 import UIKit
 
 class FavoritesController: UICollectionViewController, UICollectionViewDelegateFlowLayout {
-        
+            
     fileprivate let cellId = "cellId"
     
     var meals = UserDefaults.standard.savedMeals()

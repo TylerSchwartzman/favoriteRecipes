@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 let placeholder = UIImage(named: "favorites")
 
@@ -33,6 +34,11 @@ class FavoriteMealCell: UICollectionViewCell {
         regionLabel.font = UIFont.systemFont(ofSize: 14)
     }
     
+    override func layoutSubviews() {
+        imageView.layer.cornerRadius = 10
+        imageView.layer.masksToBounds = true
+    }
+    
     fileprivate func configureViews() {
         imageView.heightAnchor.constraint(equalTo: imageView.widthAnchor).isActive = true
         
@@ -46,6 +52,7 @@ class FavoriteMealCell: UICollectionViewCell {
         stackView.leadingAnchor.constraint(equalTo: leadingAnchor).isActive = true
         stackView.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         stackView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        
     }
     
     override init(frame: CGRect) {

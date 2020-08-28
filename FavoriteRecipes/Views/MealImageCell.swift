@@ -9,17 +9,18 @@
 import UIKit
 import SDWebImage
 
-class MealImageCell2: UITableViewCell {
+class MealImageCell: UITableViewCell {
+    
+    var mealImageView = UIImageView(image: placeholder)
+    var heightConstraint: NSLayoutConstraint!
         
-    var meal: Meal! {
-        didSet {
-            guard let url = URL(string: meal.strMealThumb ?? "") else { return }
-            imageView1.sd_setImage(with: url, completed: nil)
-        }
+    func configure (with meal: Meal) {
+        guard let url = URL(string: meal.strMealThumb ?? "") else { return }
+        
+        mealImageView.sd_setImage(with: url, completed: nil)
+        mealImageView.layer.cornerRadius = 20
     }
-    
-    var imageView1 = UIImageView(image: placeholder)
-    
+
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         configureViews()
@@ -30,14 +31,19 @@ class MealImageCell2: UITableViewCell {
     }
     
     fileprivate func configureViews() {
-        imageView1.heightAnchor.constraint(equalTo: imageView1.widthAnchor).isActive = true
                         
-        contentView.addSubview(imageView1)
-        imageView1.translatesAutoresizingMaskIntoConstraints = false
-        imageView1.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
-        imageView1.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
-        imageView1.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
-        imageView1.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        contentView.addSubview(mealImageView)
+        mealImageView.translatesAutoresizingMaskIntoConstraints = false
+        mealImageView.topAnchor.constraint(equalTo: contentView.topAnchor).isActive = true
+        mealImageView.leadingAnchor.constraint(equalTo: contentView.leadingAnchor).isActive = true
+        mealImageView.trailingAnchor.constraint(equalTo: contentView.trailingAnchor).isActive = true
+        mealImageView.bottomAnchor.constraint(equalTo: contentView.bottomAnchor).isActive = true
+        
+        heightConstraint = mealImageView.heightAnchor.constraint(equalTo: mealImageView.widthAnchor)
+        
+        heightConstraint.priority = UILayoutPriority.init(999)
+
+        heightConstraint.isActive = true
     }
     
 }
