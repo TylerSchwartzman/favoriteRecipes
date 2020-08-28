@@ -17,8 +17,45 @@ class Meal: NSObject, Decodable, NSCoding {
         coder.encode(strInstructions ?? "", forKey: "instructionsKey")
         coder.encode(strIngredient1 ?? "", forKey: "ingredient1Key")
         coder.encode(strIngredient2 ?? "", forKey: "ingredient2Key")
+        coder.encode(strIngredient3 ?? "", forKey: "ingredient3Key")
+        coder.encode(strIngredient4 ?? "", forKey: "ingredient4Key")
+        coder.encode(strIngredient5 ?? "", forKey: "ingredient5Key")
+        coder.encode(strIngredient6 ?? "", forKey: "ingredient6Key")
+        coder.encode(strIngredient7 ?? "", forKey: "ingredient7Key")
+        coder.encode(strIngredient8 ?? "", forKey: "ingredient8Key")
+        coder.encode(strIngredient9 ?? "", forKey: "ingredient9Key")
+        coder.encode(strIngredient10 ?? "", forKey: "ingredient10Key")
+        coder.encode(strIngredient11 ?? "", forKey: "ingredient11Key")
+        coder.encode(strIngredient12 ?? "", forKey: "ingredient12Key")
+        coder.encode(strIngredient13 ?? "", forKey: "ingredient13Key")
+        coder.encode(strIngredient14 ?? "", forKey: "ingredient14Key")
+        coder.encode(strIngredient15 ?? "", forKey: "ingredient15Key")
+        coder.encode(strIngredient16 ?? "", forKey: "ingredient16Key")
+        coder.encode(strIngredient17 ?? "", forKey: "ingredient17Key")
+        coder.encode(strIngredient18 ?? "", forKey: "ingredient18Key")
+        coder.encode(strIngredient19 ?? "", forKey: "ingredient19Key")
+        coder.encode(strIngredient20 ?? "", forKey: "ingredient20Key")
+        
         coder.encode(strMeasure1 ?? "", forKey: "measurement1Key")
         coder.encode(strMeasure2 ?? "", forKey: "measurement2Key")
+        coder.encode(strMeasure3 ?? "", forKey: "measurement3Key")
+        coder.encode(strMeasure4 ?? "", forKey: "measurement4Key")
+        coder.encode(strMeasure5 ?? "", forKey: "measurement5Key")
+        coder.encode(strMeasure6 ?? "", forKey: "measurement6Key")
+        coder.encode(strMeasure7 ?? "", forKey: "measurement7Key")
+        coder.encode(strMeasure8 ?? "", forKey: "measurement8Key")
+        coder.encode(strMeasure9 ?? "", forKey: "measurement9Key")
+        coder.encode(strMeasure10 ?? "", forKey: "measurement10Key")
+        coder.encode(strMeasure11 ?? "", forKey: "measurement11Key")
+        coder.encode(strMeasure12 ?? "", forKey: "measurement12Key")
+        coder.encode(strMeasure13 ?? "", forKey: "measurement13Key")
+        coder.encode(strMeasure14 ?? "", forKey: "measurement14Key")
+        coder.encode(strMeasure15 ?? "", forKey: "measurement15Key")
+        coder.encode(strMeasure16 ?? "", forKey: "measurement16Key")
+        coder.encode(strMeasure17 ?? "", forKey: "measurement17Key")
+        coder.encode(strMeasure18 ?? "", forKey: "measurement18Key")
+        coder.encode(strMeasure19 ?? "", forKey: "measurement19Key")
+        coder.encode(strMeasure20 ?? "", forKey: "measurement20Key")
     }
     
     required init?(coder: NSCoder) {
@@ -28,8 +65,45 @@ class Meal: NSObject, Decodable, NSCoding {
         self.strInstructions = coder.decodeObject(forKey: "instructionsKey") as? String
         self.strIngredient1 = coder.decodeObject(forKey: "ingredient1Key") as? String
         self.strIngredient2 = coder.decodeObject(forKey: "ingredient2Key") as? String
+        self.strIngredient3 = coder.decodeObject(forKey: "ingredient3Key") as? String
+        self.strIngredient4 = coder.decodeObject(forKey: "ingredient4Key") as? String
+        self.strIngredient5 = coder.decodeObject(forKey: "ingredient5Key") as? String
+        self.strIngredient6 = coder.decodeObject(forKey: "ingredient6Key") as? String
+        self.strIngredient7 = coder.decodeObject(forKey: "ingredient7Key") as? String
+        self.strIngredient8 = coder.decodeObject(forKey: "ingredient8Key") as? String
+        self.strIngredient9 = coder.decodeObject(forKey: "ingredient9Key") as? String
+        self.strIngredient10 = coder.decodeObject(forKey: "ingredient10Key") as? String
+        self.strIngredient11 = coder.decodeObject(forKey: "ingredient11Key") as? String
+        self.strIngredient12 = coder.decodeObject(forKey: "ingredient12Key") as? String
+        self.strIngredient13 = coder.decodeObject(forKey: "ingredient13Key") as? String
+        self.strIngredient14 = coder.decodeObject(forKey: "ingredient14Key") as? String
+        self.strIngredient15 = coder.decodeObject(forKey: "ingredient15Key") as? String
+        self.strIngredient16 = coder.decodeObject(forKey: "ingredient16Key") as? String
+        self.strIngredient17 = coder.decodeObject(forKey: "ingredient17Key") as? String
+        self.strIngredient18 = coder.decodeObject(forKey: "ingredient18Key") as? String
+        self.strIngredient19 = coder.decodeObject(forKey: "ingredient19Key") as? String
+        self.strIngredient20 = coder.decodeObject(forKey: "ingredient20Key") as? String
+        
         self.strMeasure1 = coder.decodeObject(forKey: "measurement1Key") as? String
         self.strMeasure2 = coder.decodeObject(forKey: "measurement2Key") as? String
+        self.strMeasure3 = coder.decodeObject(forKey: "measurement3Key") as? String
+        self.strMeasure4 = coder.decodeObject(forKey: "measurement4Key") as? String
+        self.strMeasure5 = coder.decodeObject(forKey: "measurement5Key") as? String
+        self.strMeasure6 = coder.decodeObject(forKey: "measurement6Key") as? String
+        self.strMeasure7 = coder.decodeObject(forKey: "measurement7Key") as? String
+        self.strMeasure8 = coder.decodeObject(forKey: "measurement8Key") as? String
+        self.strMeasure9 = coder.decodeObject(forKey: "measurement9Key") as? String
+        self.strMeasure10 = coder.decodeObject(forKey: "measurement10Key") as? String
+        self.strMeasure11 = coder.decodeObject(forKey: "measurement11Key") as? String
+        self.strMeasure12 = coder.decodeObject(forKey: "measurement12Key") as? String
+        self.strMeasure13 = coder.decodeObject(forKey: "measurement13Key") as? String
+        self.strMeasure14 = coder.decodeObject(forKey: "measurement14Key") as? String
+        self.strMeasure15 = coder.decodeObject(forKey: "measurement15Key") as? String
+        self.strMeasure16 = coder.decodeObject(forKey: "measurement16Key") as? String
+        self.strMeasure17 = coder.decodeObject(forKey: "measurement17Key") as? String
+        self.strMeasure18 = coder.decodeObject(forKey: "measurement18Key") as? String
+        self.strMeasure19 = coder.decodeObject(forKey: "measurement19Key") as? String
+        self.strMeasure20 = coder.decodeObject(forKey: "measurement20Key") as? String
     }
 
     var strMeal: String?
@@ -80,79 +154,3 @@ class Meal: NSObject, Decodable, NSCoding {
     var strMeasure19: String?
     var strMeasure20: String?
 }
-
-extension Meal {
-    
-    func getIngredientsList() -> [String] {
-        
-        var ingredients = [String]()
-        
-        let add = { (ingredient: String?) -> Void in
-            guard let ingredient = ingredient,
-                !ingredient.isEmpty else { return }
-            let stringIngredient = String(ingredient)
-            ingredients.append(stringIngredient)
-        }
-        
-        add(strIngredient1)
-        add(strIngredient2)
-        add(strIngredient3)
-        add(strIngredient4)
-        add(strIngredient5)
-        add(strIngredient6)
-        add(strIngredient7)
-        add(strIngredient8)
-        add(strIngredient9)
-        add(strIngredient10)
-        add(strIngredient11)
-        add(strIngredient12)
-        add(strIngredient13)
-        add(strIngredient14)
-        add(strIngredient15)
-        add(strIngredient16)
-        add(strIngredient17)
-        add(strIngredient18)
-        add(strIngredient19)
-        add(strIngredient20)
-        
-        return ingredients
-    }
-    
-    func getMeasurementsList() -> [String] {
-        
-        var measurements = [String]()
-        
-        let add = { (measure: String?) -> Void in
-            guard let measure = measure,
-                !measure.isEmpty else { return }
-            let stringMeasurement = String(measure.lowercased())
-            measurements.append(stringMeasurement)
-        }
-        
-        add(strMeasure1)
-        add(strMeasure2)
-        add(strMeasure3)
-        add(strMeasure4)
-        add(strMeasure5)
-        add(strMeasure6)
-        add(strMeasure7)
-        add(strMeasure8)
-        add(strMeasure9)
-        add(strMeasure10)
-        add(strMeasure11)
-        add(strMeasure12)
-        add(strMeasure13)
-        add(strMeasure14)
-        add(strMeasure15)
-        add(strMeasure16)
-        add(strMeasure17)
-        add(strMeasure18)
-        add(strMeasure19)
-        add(strMeasure20)
-        
-        return measurements
-    }
-    
-}
-
-
