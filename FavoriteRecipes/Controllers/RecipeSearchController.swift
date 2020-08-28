@@ -1,15 +1,15 @@
 //
-//  MealSearchController.swift
+//  SearchController.swift
 //  FavoriteRecipes
 //
-//  Created by Tyler Schwartzman on 8/4/20.
+//  Created by Tyler Schwartzman on 8/27/20.
 //  Copyright © 2020 Tyler_Dev. All rights reserved.
 //
 
 import UIKit
 import Alamofire
 
-class RecipeSearchController: UITableViewController, UISearchBarDelegate {
+class RecipeSearchController: UICollectionViewController, UICollectionViewDelegateFlowLayout, UISearchBarDelegate {
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -18,7 +18,7 @@ class RecipeSearchController: UITableViewController, UISearchBarDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupTableView()
+        setupCollectionView()
         setupSearchBar()
         
     }
@@ -36,69 +36,106 @@ class RecipeSearchController: UITableViewController, UISearchBarDelegate {
     func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         
         meals = []
-        tableView.reloadData()
+        collectionView.reloadData()
         
         timer?.invalidate()
         timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (timer) in
             APIService.share.fetchMeals(searchText: searchText) { (meals) in
                 self.meals = meals
-                self.tableView.reloadData()
+                self.collectionView.reloadData()
             }
         })
     }
     
     fileprivate let cellId = "cellId"
-    fileprivate func setupTableView() {
-        tableView.tableFooterView = UIView()
-        let nib = UINib(nibName: "MealCell", bundle: nil)
-        tableView.register(nib, forCellReuseIdentifier: cellId)
+    fileprivate func setupCollectionView() {
+        collectionView.backgroundColor = .white
+
+        collectionView.register(FavoriteMealCell.self, forCellWithReuseIdentifier: cellId)
     }
     
     //MARK:- UITableView
     
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let recipeDetailsVC = RecipeDetailsController()
-        let meal = self.meals[indexPath.row]
-        recipeDetailsVC.meal = meal
-        
-        navigationController?.pushViewController(recipeDetailsVC, animated: true)
-    }
+    //    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+    //        let recipeDetailsVC = RecipeDetailsController()
+    //        let meal = self.meals[indexPath.row]
+    //        recipeDetailsVC.meal = meal
+    //
+    //        navigationController?.pushViewController(recipeDetailsVC, animated: true)
+    //    }
+    //
+    //    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+    //        let label = UILabel()
+    //        label.text = "Please enter a Search Term"
+    //        label.textAlignment = .center
+    //        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
+    //        return label
+    //    }
+    //
+    //    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    //        return meals.count
+    //    }
+    //
+    //    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    //        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MealCell
+    //        let meal = self.meals[indexPath.row]
+    //        cell.meal = meal
+    //
+    //        return cell
+    //    }
+    //
+    //    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    //        return 132
+    //    }
+    //
+    //    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    //        return self.meals.isEmpty && searchController.searchBar.text?.isEmpty == true ? 250 : 0
+    //    }
+    //
+    //    var mealSearchView = Bundle.main.loadNibNamed("MealSearchingView", owner: self, options: nil)?.first as? UIView
+    //    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    //        return mealSearchView
+    //    }
+    //
+    //    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    //        return self.meals.isEmpty && searchController.searchBar.text?.isEmpty == false ? 200 : 0
+    //    }
     
-    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let label = UILabel()
-        label.text = "Please enter a Search Term"
-        label.textAlignment = .center
-        label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)
-        return label
-    }
+    //MARK:- UICollection View Delegate / Spacing Methods
     
-    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return meals.count
     }
     
-    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellId, for: indexPath) as! MealCell
-        let meal = self.meals[indexPath.row]
-        cell.meal = meal
+    override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FavoriteMealCell
+        
+        cell.meal = self.meals[indexPath.item]
         
         return cell
     }
     
-    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 132
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        
+        let recipeDetailsVC = RecipeDetailsController()
+        recipeDetailsVC.meal = self.meals[indexPath.item]
+        navigationController?.pushViewController(recipeDetailsVC, animated: true)
     }
     
-    override func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        return self.meals.isEmpty && searchController.searchBar.text?.isEmpty == true ? 250 : 0
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        
+        let width = (view.frame.width - 3 * 16) / 2
+        
+        return CGSize(width: width, height: width + 46)
     }
     
-    var mealSearchView = Bundle.main.loadNibNamed("MealSearchingView", owner: self, options: nil)?.first as? UIView
-    override func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-        return mealSearchView
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
+        return UIEdgeInsets(top: 16, left: 16, bottom: 16, right: 16)
     }
     
-    override func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-        return self.meals.isEmpty && searchController.searchBar.text?.isEmpty == false ? 200 : 0
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 16
     }
+    
 }
 

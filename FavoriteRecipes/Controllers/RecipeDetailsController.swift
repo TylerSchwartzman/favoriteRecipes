@@ -44,13 +44,13 @@ class RecipeDetailsController: UITableViewController {
     fileprivate let cellId1 = "cellId1"
     fileprivate let cellId2 = "cellId2"
     fileprivate let cellId3 = "cellId3"
+
     fileprivate func setupTableView() {
         let nib1 = UINib(nibName: "RecipeInstructionsCell", bundle: nil)
         let nib2 = UINib(nibName: "IngredientsCell", bundle: nil)
-        let nib3 = UINib(nibName: "MealImageCell", bundle: nil)
         tableView.register(nib1, forCellReuseIdentifier: cellId1)
         tableView.register(nib2, forCellReuseIdentifier: cellId2)
-        tableView.register(nib3, forCellReuseIdentifier: cellId3)
+        tableView.register(MealImageCell.self, forCellReuseIdentifier: cellId3)
         tableView.rowHeight = UITableView.automaticDimension
         tableView.estimatedRowHeight = 600
         tableView.tableFooterView = UIView()
@@ -80,6 +80,7 @@ class RecipeDetailsController: UITableViewController {
         
         var favoriteMeals = UserDefaults.standard.savedMeals()
         favoriteMeals.append(meal)
+    
         let data = NSKeyedArchiver.archivedData(withRootObject: favoriteMeals)
         
         UserDefaults.standard.set(data, forKey: UserDefaults.favoriteMealKey)
