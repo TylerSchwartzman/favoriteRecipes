@@ -48,10 +48,11 @@ class RecipeSearchController: UICollectionViewController, UICollectionViewDelega
     }
     
     fileprivate let cellId = "cellId"
+    fileprivate let layout = RecipeSearchLayout()
     fileprivate func setupCollectionView() {
         collectionView.backgroundColor = .white
-
         collectionView.register(FavoriteMealCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.collectionViewLayout = layout
     }
     
     //MARK:- UITableView
@@ -109,8 +110,8 @@ class RecipeSearchController: UICollectionViewController, UICollectionViewDelega
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FavoriteMealCell
-        
-        cell.meal = self.meals[indexPath.item]
+        let meal = self.meals[indexPath.row]
+        cell.meal = meal
         
         return cell
     }
@@ -138,4 +139,3 @@ class RecipeSearchController: UICollectionViewController, UICollectionViewDelega
     }
     
 }
-
