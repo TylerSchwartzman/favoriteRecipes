@@ -177,6 +177,7 @@
 				32A3E80224DA50CE00FDC856 /* Models */,
 				32A3E80524DA518600FDC856 /* Views */,
 				32A3E7FF24DA4DB200FDC856 /* Controllers */,
+				329882C524FD816800097FD2 /* Layouts */,
 				32A3E7D124DA4C4000FDC856 /* Main.storyboard */,
 				32A3E7D424DA4C4200FDC856 /* Assets.xcassets */,
 				32A3E7D624DA4C4200FDC856 /* LaunchScreen.storyboard */,
@@ -234,7 +235,6 @@
 				32A3E81724DE4E6E00FDC856 /* IngredientsCell.swift */,
 				32657FE924E5E37900B57C2A /* MealSearchingView.xib */,
 				32298F9424E890B000FF6B02 /* FavoriteMealCell.swift */,
-				329882C524FD816800097FD2 /* Layouts */,
 			);
 			path = Views;
 			sourceTree = "<group>";
