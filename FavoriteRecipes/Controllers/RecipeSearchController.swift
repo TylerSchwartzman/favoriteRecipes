@@ -20,7 +20,6 @@ class RecipeSearchController: UICollectionViewController, UICollectionViewDelega
         
         setupCollectionView()
         setupSearchBar()
-        
     }
     
     //MARK:- Setup Work
@@ -50,10 +49,12 @@ class RecipeSearchController: UICollectionViewController, UICollectionViewDelega
     fileprivate let cellId = "cellId"
     fileprivate let layout = RecipeSearchLayout()
     fileprivate func setupCollectionView() {
-        collectionView.backgroundColor = .white
-        collectionView.register(FavoriteMealCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.backgroundColor = .gingerRoot
+        collectionView.register(MealCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.collectionViewLayout = layout
     }
+    
+
     
     //MARK:- UITableView
     
@@ -109,7 +110,7 @@ class RecipeSearchController: UICollectionViewController, UICollectionViewDelega
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FavoriteMealCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MealCollectionViewCell
         let meal = self.meals[indexPath.row]
         cell.meal = meal
         
@@ -127,7 +128,7 @@ class RecipeSearchController: UICollectionViewController, UICollectionViewDelega
         
         let width = (view.frame.width - 3 * 16) / 2
         
-        return CGSize(width: width, height: width + 46)
+        return CGSize(width: width, height: width)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {

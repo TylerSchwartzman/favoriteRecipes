@@ -11,7 +11,7 @@ import SDWebImage
 
 class MealImageCell: UITableViewCell {
     
-    var mealImageView = UIImageView(image: placeholder)
+    var mealImageView = UIImageView()
     var heightConstraint: NSLayoutConstraint!
         
     func configure (with meal: Meal) {

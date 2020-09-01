@@ -29,7 +29,7 @@ class FavoritesController: UICollectionViewController, UICollectionViewDelegateF
     
     fileprivate func setupCollectionView() {
         collectionView.backgroundColor = .white
-        collectionView.register(FavoriteMealCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(MealCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         let gesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
         collectionView.addGestureRecognizer(gesture)
     }
@@ -58,7 +58,7 @@ class FavoritesController: UICollectionViewController, UICollectionViewDelegateF
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! FavoriteMealCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MealCollectionViewCell
         
         cell.meal = self.meals[indexPath.item]
         
@@ -75,7 +75,7 @@ class FavoritesController: UICollectionViewController, UICollectionViewDelegateF
         
         let width = (view.frame.width - 3 * 16) / 2
         
-        return CGSize(width: width, height: width + 46)
+        return CGSize(width: width, height: width)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
