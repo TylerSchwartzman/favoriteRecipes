@@ -55,6 +55,7 @@ class RecipeDetailsController: UITableViewController {
         tableView.estimatedRowHeight = 600
         tableView.tableFooterView = UIView()
         tableView.reloadData()
+        tableView.backgroundColor = .coolGrey
     }
     
     fileprivate func fetchRecipeIngredients() {

@@ -27,7 +27,6 @@ class MainTabBarController: UITabBarController {
         let searchController = RecipeSearchController(collectionViewLayout: layout)
         
         viewControllers = [
-//        generateNavigationController(for: RecipeSearchController(), title: "Search", image: searchImage),
         generateNavigationController(for: searchController, title: "Search", image: searchImage),
         generateNavigationController(for: favoritesController, title: "Favorites", image: favoritesImage)
         ]

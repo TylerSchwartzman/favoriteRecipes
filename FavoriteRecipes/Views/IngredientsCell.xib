@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="16097.2" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16087"/>
@@ -8,21 +8,22 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="104" id="cMd-bd-w9k" customClass="IngredientsCell" customModule="FavoriteRecipes" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="464" height="104"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="103" id="cMd-bd-w9k" customClass="IngredientsCell" customModule="FavoriteRecipes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="510" height="103"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cMd-bd-w9k" id="YBU-z3-3WO">
-                <rect key="frame" x="0.0" y="0.0" width="464" height="104"/>
+                <rect key="frame" x="0.0" y="0.0" width="510" height="103"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measurement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLn-aa-QAg">
-                        <rect key="frame" x="20" y="11" width="326.5" height="82"/>
+                        <rect key="frame" x="20" y="11" width="372.5" height="81"/>
+                        <color key="backgroundColor" red="0.67233774574375693" green="0.78741522189545854" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Ingredient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7R-qU-cly">
-                        <rect key="frame" x="366.5" y="11" width="77.5" height="82"/>
+                        <rect key="frame" x="412.5" y="11" width="77.5" height="81"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -38,11 +39,12 @@
                     <constraint firstItem="p7R-qU-cly" firstAttribute="top" secondItem="YBU-z3-3WO" secondAttribute="topMargin" id="on7-Qu-Qxd"/>
                 </constraints>
             </tableViewCellContentView>
+            <color key="backgroundColor" red="0.384031862" green="0.39206683640000001" blue="0.40035653110000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="ingredientLabel" destination="p7R-qU-cly" id="Fj4-6E-2IE"/>
                 <outlet property="measurementLabel" destination="uLn-aa-QAg" id="ODD-NA-BO5"/>
             </connections>
-            <point key="canvasLocation" x="134.78260869565219" y="89.732142857142847"/>
+            <point key="canvasLocation" x="168.11594202898553" y="89.397321428571431"/>
         </tableViewCell>
     </objects>
 </document>

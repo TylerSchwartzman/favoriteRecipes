@@ -15,7 +15,6 @@ class IngredientsCell: UITableViewCell {
     
     var meal: Meal! {
         didSet {
-            
             guard let meal = meal else { return }
             
             measurementLabel.text = meal.strMeasure1
