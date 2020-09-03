@@ -49,12 +49,12 @@ class RecipeSearchController: UICollectionViewController, UICollectionViewDelega
     fileprivate let cellId = "cellId"
     fileprivate let layout = RecipeSearchLayout()
     fileprivate func setupCollectionView() {
-        collectionView.backgroundColor = .gingerRoot
+        collectionView.backgroundColor = .coolGrey
         collectionView.register(MealCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         collectionView.collectionViewLayout = layout
     }
     
-
+    
     
     //MARK:- UITableView
     
@@ -104,6 +104,15 @@ class RecipeSearchController: UICollectionViewController, UICollectionViewDelega
     //    }
     
     //MARK:- UICollection View Delegate / Spacing Methods
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        let nib = UINib(nibName: "MealSearchingView", bundle: nil)
+        collectionView.register(nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "id")
+        
+        let view = collectionView.dequeueReusableSupplementaryView(ofKind: <#T##String#>, withReuseIdentifier: <#T##String#>, for: <#T##IndexPath#>)
+        
+        return view
+    }
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return meals.count
