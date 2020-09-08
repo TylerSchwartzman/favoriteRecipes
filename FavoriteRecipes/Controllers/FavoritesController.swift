@@ -28,7 +28,7 @@ class FavoritesController: UICollectionViewController, UICollectionViewDelegateF
     }
     
     fileprivate func setupCollectionView() {
-        collectionView.backgroundColor = .white
+        collectionView.backgroundColor = .coolGrey
         collectionView.register(MealCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         let gesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
         collectionView.addGestureRecognizer(gesture)

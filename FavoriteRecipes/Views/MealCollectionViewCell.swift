@@ -72,8 +72,8 @@ class MealCollectionViewCell: UICollectionViewCell {
     
     fileprivate func configureImageTint() {
         contentView.addSubview(imageTint)
-        imageTint.backgroundColor = .coolerGrey
-        imageTint.alpha = 0.6
+        imageTint.backgroundColor = .black
+        imageTint.alpha = 0.3
         imageTint.layer.cornerRadius = 10
         imageTint.layer.masksToBounds = true
         imageTint.translatesAutoresizingMaskIntoConstraints = false

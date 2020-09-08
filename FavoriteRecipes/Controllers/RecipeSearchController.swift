@@ -29,6 +29,8 @@ class RecipeSearchController: UICollectionViewController, UICollectionViewDelega
         navigationItem.hidesSearchBarWhenScrolling = false
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
+        let textFieldInsideSearchBar = searchController.searchBar.value(forKey: "searchField") as? UITextField
+        textFieldInsideSearchBar?.textColor = .burntOrange
     }
     
     var timer: Timer?
@@ -46,15 +48,22 @@ class RecipeSearchController: UICollectionViewController, UICollectionViewDelega
         })
     }
     
+    private func showError(title: String, message: String) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
+        present(alertController, animated: true, completion: nil)
+    }
+    
     fileprivate let cellId = "cellId"
     fileprivate let layout = RecipeSearchLayout()
+    let nib = UINib(nibName: "MealSearchFooterView", bundle: nil)
     fileprivate func setupCollectionView() {
         collectionView.backgroundColor = .coolGrey
         collectionView.register(MealCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(HeaderCollectionView.self, forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionView.identifier)
+        collectionView.register(nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: MealSearchFooterView.identifier)
         collectionView.collectionViewLayout = layout
     }
-    
-    
     
     //MARK:- UITableView
     
@@ -105,15 +114,6 @@ class RecipeSearchController: UICollectionViewController, UICollectionViewDelega
     
     //MARK:- UICollection View Delegate / Spacing Methods
     
-    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        let nib = UINib(nibName: "MealSearchingView", bundle: nil)
-        collectionView.register(nib, forSupplementaryViewOfKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: "id")
-        
-        let view = collectionView.dequeueReusableSupplementaryView(ofKind: <#T##String#>, withReuseIdentifier: <#T##String#>, for: <#T##IndexPath#>)
-        
-        return view
-    }
-    
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return meals.count
     }
@@ -148,4 +148,34 @@ class RecipeSearchController: UICollectionViewController, UICollectionViewDelega
         return 16
     }
     
+    //MARK: UICollectionView Supplementary Views
+    
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        if kind == UICollectionView.elementKindSectionFooter {
+            
+            let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: MealSearchFooterView.identifier, for: indexPath) as! MealSearchFooterView
+            
+            return footerView
+            
+        } else {
+            
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionView.identifier, for: indexPath) as! HeaderCollectionView
+            
+            headerView.configure()
+            
+            return headerView
+        }
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        
+        return self.meals.isEmpty && searchController.searchBar.text?.isEmpty == true ? CGSize(width: view.frame.size.width, height: 250) : CGSize(width: view.frame.size.width, height: 0)
+        
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
+        
+        return self.meals.isEmpty && searchController.searchBar.text?.isEmpty == false ? CGSize(width: view.frame.size.width, height: 200) : CGSize(width: view.frame.size.width, height: 0)
+    }
 }

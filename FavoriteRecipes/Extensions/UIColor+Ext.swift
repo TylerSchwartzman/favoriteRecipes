@@ -10,12 +10,9 @@ import UIKit
 
 extension UIColor {
         
-    static let coolGrey = UIColor(red: 79/255, green: 93/255, blue: 117/255, alpha: 1)
-      
-    static let warmGrey = UIColor(red: 45/255, green: 49/255, blue: 66/255, alpha: 1)
+    static let coolGrey = UIColor(red: 166/255, green: 188/255, blue: 203/255, alpha: 1)
     
-    static let coolerGrey = UIColor(red: 191/255, green: 192/255, blue: 192/255, alpha: 1)
+    static let burntOrange = UIColor(red: 241/255, green: 250/255, blue: 238/255, alpha: 1)
     
-    static let mandarin = UIColor(red: 239/255, green: 131/255, blue: 84/255, alpha: 1)
- 
+//    static let burntOrange = UIColor(red: 184/255, green: 61/255, blue: 15/255, alpha: 1)
 }

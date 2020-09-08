@@ -21,7 +21,6 @@ class RecipeDetailsController: UITableViewController {
     let favoritesButton = UIImage(named: "favorites")
     let favoritedButton = UIImage(named: "favorited")
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -65,13 +64,24 @@ class RecipeDetailsController: UITableViewController {
     
     fileprivate func setupNavBarButtons() {
         
+        let favoriteButton = UIBarButtonItem()
+        favoriteButton.image = favoritesButton
+        favoriteButton.tintColor = .burntOrange
+        favoriteButton.target = self
+        favoriteButton.action = #selector(tappedFavoritesButton)
+        
+        let favoritedTapped = UIBarButtonItem()
+        favoritedTapped.image = favoritedButton
+        favoritedTapped.tintColor = .burntOrange
+        favoritedTapped.target = self
+        favoritedTapped.action = nil
+        
         let savedMeals = UserDefaults.standard.savedMeals()
         let hasFavorited = savedMeals.firstIndex(where: { $0.strMeal == self.meal?.strMeal }) != nil
         if hasFavorited {
-            navigationItem.rightBarButtonItem = UIBarButtonItem(image: favoritedButton, style: .plain, target: self , action: nil)
+            navigationItem.rightBarButtonItem = favoritedTapped
         } else {
-            navigationItem.rightBarButtonItem =
-                UIBarButtonItem(image: favoritesButton, style: .plain, target: self , action: #selector(tappedFavoritesButton))
+            navigationItem.rightBarButtonItem = favoriteButton
         }
     }
     
@@ -106,13 +116,15 @@ class RecipeDetailsController: UITableViewController {
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         
         let label = IndentedLabel()
+        
         if section == 1 {
             label.text = "Ingredients"
         } else if section == 2 {
             label.text = "Instructions"
         }
         
-        label.backgroundColor = .lightGray
+        label.backgroundColor = .coolGrey
+        label.textColor = .white
         label.font = UIFont.boldSystemFont(ofSize: 16)
         
         return label

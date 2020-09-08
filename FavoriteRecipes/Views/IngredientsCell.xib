@@ -15,31 +15,31 @@
                 <rect key="frame" x="0.0" y="0.0" width="510" height="103"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measurement" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uLn-aa-QAg">
-                        <rect key="frame" x="20" y="11" width="372.5" height="81"/>
-                        <color key="backgroundColor" red="0.67233774574375693" green="0.78741522189545854" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Ingredient" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7R-qU-cly">
-                        <rect key="frame" x="412.5" y="11" width="77.5" height="81"/>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
+                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="Sgy-3H-OUf">
+                        <rect key="frame" x="20" y="11" width="470" height="81"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Measurement" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="uLn-aa-QAg">
+                                <rect key="frame" x="0.0" y="0.0" width="225" height="81"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="252" verticalHuggingPriority="251" text="Ingredient" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="p7R-qU-cly">
+                                <rect key="frame" x="245" y="0.0" width="225" height="81"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                    </stackView>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="p7R-qU-cly" firstAttribute="trailing" secondItem="YBU-z3-3WO" secondAttribute="trailingMargin" id="Vvf-U4-U4p"/>
-                    <constraint firstItem="uLn-aa-QAg" firstAttribute="leading" secondItem="YBU-z3-3WO" secondAttribute="leadingMargin" id="ZCj-No-N37"/>
-                    <constraint firstItem="p7R-qU-cly" firstAttribute="leading" secondItem="uLn-aa-QAg" secondAttribute="trailing" constant="20" id="ZWv-NK-fgS"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="p7R-qU-cly" secondAttribute="bottom" id="bgN-IS-tnE"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="uLn-aa-QAg" secondAttribute="bottom" id="eKJ-Zb-YLH"/>
-                    <constraint firstItem="uLn-aa-QAg" firstAttribute="top" secondItem="YBU-z3-3WO" secondAttribute="topMargin" id="iKi-EX-B7d"/>
-                    <constraint firstItem="p7R-qU-cly" firstAttribute="top" secondItem="YBU-z3-3WO" secondAttribute="topMargin" id="on7-Qu-Qxd"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="Sgy-3H-OUf" secondAttribute="trailing" id="04b-7y-tqw"/>
+                    <constraint firstItem="Sgy-3H-OUf" firstAttribute="leading" secondItem="YBU-z3-3WO" secondAttribute="leadingMargin" id="1SQ-by-bAY"/>
+                    <constraint firstItem="Sgy-3H-OUf" firstAttribute="top" secondItem="YBU-z3-3WO" secondAttribute="topMargin" id="4yX-7i-Jp2"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="Sgy-3H-OUf" secondAttribute="bottom" id="RhK-qi-gfJ"/>
                 </constraints>
             </tableViewCellContentView>
-            <color key="backgroundColor" red="0.384031862" green="0.39206683640000001" blue="0.40035653110000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <connections>
                 <outlet property="ingredientLabel" destination="p7R-qU-cly" id="Fj4-6E-2IE"/>
                 <outlet property="measurementLabel" destination="uLn-aa-QAg" id="ODD-NA-BO5"/>
