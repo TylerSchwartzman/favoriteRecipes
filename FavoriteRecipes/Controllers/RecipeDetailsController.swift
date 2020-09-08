@@ -25,7 +25,7 @@ class RecipeDetailsController: UITableViewController {
         super.viewDidLoad()
         
         setupTableView()
-        setupNavBarButtons()
+        setupNavBar()
     }
     
     var meal: Meal! {
@@ -62,7 +62,7 @@ class RecipeDetailsController: UITableViewController {
         measurements.append(contentsOf: meal.getMeasurementsList())
     }
     
-    fileprivate func setupNavBarButtons() {
+    fileprivate func setupNavBar() {
         
         let favoriteButton = UIBarButtonItem()
         favoriteButton.image = favoritesButton
