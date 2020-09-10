@@ -9,4 +9,4 @@ My first iOS project retrieving data from a public API and using UICollectionVie
 - I persisted the favorite recipes data by utilizing UserDefaults and NSCoding Protocol 
 - Used CocoaPods to integrate the Alamofire and SDWebImage libraries for streamlining network requests and cache support for downloaded images
 
-<img src="https://user-images.githubusercontent.com/67024373/92641342-353d7580-f2a4-11ea-9126-157359fa0809.gif" width="200" height="400" />
+<img src="https://user-images.githubusercontent.com/67024373/92783154-2b327a00-f36b-11ea-92c6-e32134f26813.gif" />
