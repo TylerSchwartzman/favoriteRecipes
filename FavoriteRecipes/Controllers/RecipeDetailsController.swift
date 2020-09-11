@@ -58,13 +58,13 @@ class RecipeDetailsController: UITableViewController {
         
         let favoriteButton = UIBarButtonItem()
         favoriteButton.image = favoritesButton
-        favoriteButton.tintColor = .burntOrange
+        favoriteButton.tintColor = .offWhite
         favoriteButton.target = self
         favoriteButton.action = #selector(tappedFavoritesButton)
         
         let favoritedTapped = UIBarButtonItem()
         favoritedTapped.image = favoritedButton
-        favoritedTapped.tintColor = .burntOrange
+        favoritedTapped.tintColor = .offWhite
         favoritedTapped.target = self
         favoritedTapped.action = nil
         

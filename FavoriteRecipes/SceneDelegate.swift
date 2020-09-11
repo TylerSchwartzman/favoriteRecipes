@@ -15,11 +15,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         
-        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.burntOrange]
-        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.burntOrange]
-        UINavigationBar.appearance().backgroundColor = .coolGrey
-        UINavigationBar.appearance().barTintColor = .coolGrey
-        UINavigationBar.appearance().tintColor = .burntOrange
+        createNavBarAppearance()
         
         let mainTabBarVC = MainTabBarController()
         guard let windowScene = (scene as? UIWindowScene) else { return }
@@ -29,6 +25,15 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.makeKeyAndVisible()
         window?.rootViewController = mainTabBarVC
         
+    }
+    
+    func createNavBarAppearance() {
+        UINavigationBar.appearance().titleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.offWhite]
+        UINavigationBar.appearance().largeTitleTextAttributes = [NSAttributedString.Key.foregroundColor: UIColor.offWhite]
+        UINavigationBar.appearance().backgroundColor = .coolGrey
+        UINavigationBar.appearance().barTintColor = .coolGrey
+        UINavigationBar.appearance().tintColor = .offWhite
+        UITabBar.appearance().tintColor = .warmGrey
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {

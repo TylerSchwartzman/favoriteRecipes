@@ -30,7 +30,7 @@ class RecipeSearchController: UICollectionViewController, UISearchBarDelegate {
         searchController.obscuresBackgroundDuringPresentation = false
         searchController.searchBar.delegate = self
         let textFieldInsideSearchBar = searchController.searchBar.value(forKey: "searchField") as? UITextField
-        textFieldInsideSearchBar?.textColor = .burntOrange
+        textFieldInsideSearchBar?.textColor = .offWhite
     }
     
     var timer: Timer?
