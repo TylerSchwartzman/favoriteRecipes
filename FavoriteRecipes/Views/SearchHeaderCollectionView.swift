@@ -10,11 +10,11 @@ import UIKit
 
 class SearchHeaderCollectionView: UICollectionReusableView {
     
-    static let identifier = "HeaderIdentifier"
+    static let identifier = "SearchHeaderIdentifier"
     
     private let label: UILabel = {
         let label = UILabel()
-        //label.text = "No Search Queries"
+        label.text = "No Search Queries"
         label.textColor = .white
         label.textAlignment = .center
         label.font = UIFont.systemFont(ofSize: 18, weight: .semibold)

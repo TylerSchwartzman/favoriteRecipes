@@ -60,24 +60,24 @@ class RecipeDetailsController: UITableViewController {
         favoriteButton.image = favoritesButton
         favoriteButton.tintColor = .offWhite
         favoriteButton.target = self
-        favoriteButton.action = #selector(tappedFavoritesButton)
+        favoriteButton.action = #selector(tappedFavoriteButton)
         
-        let favoritedTapped = UIBarButtonItem()
-        favoritedTapped.image = favoritedButton
-        favoritedTapped.tintColor = .offWhite
-        favoritedTapped.target = self
-        favoritedTapped.action = nil
+        let favoriteTapped = UIBarButtonItem()
+        favoriteTapped.image = favoritedButton
+        favoriteTapped.tintColor = .offWhite
+        favoriteTapped.target = self
+        favoriteTapped.action = nil
         
         let savedMeals = UserDefaults.standard.savedMeals()
         let hasFavorited = savedMeals.firstIndex(where: { $0.strMeal == self.meal?.strMeal }) != nil
         if hasFavorited {
-            navigationItem.rightBarButtonItem = favoritedTapped
+            navigationItem.rightBarButtonItem = favoriteTapped
         } else {
             navigationItem.rightBarButtonItem = favoriteButton
         }
     }
     
-    @objc fileprivate func tappedFavoritesButton() {
+    @objc fileprivate func tappedFavoriteButton() {
         
         guard let meal = self.meal else { return }
         

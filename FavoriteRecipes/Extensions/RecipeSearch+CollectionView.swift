@@ -58,7 +58,7 @@ extension RecipeSearchController: UICollectionViewDelegateFlowLayout {
             
         } else {
             
-            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: HeaderCollectionView.identifier, for: indexPath) as! HeaderCollectionView
+            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: SearchHeaderCollectionView.identifier, for: indexPath) as! SearchHeaderCollectionView
             
             headerView.configure()
             
