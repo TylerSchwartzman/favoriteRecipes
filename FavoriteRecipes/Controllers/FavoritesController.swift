@@ -31,6 +31,9 @@ class FavoritesController: UICollectionViewController {
         collectionView.register(MealCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
         let gesture = UILongPressGestureRecognizer(target: self, action: #selector(handleLongPress))
         collectionView.addGestureRecognizer(gesture)
+        collectionView.register(FavoritesHeaderCollectionView.self,
+                                forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,
+                                withReuseIdentifier: FavoritesHeaderCollectionView.identifier)
     }
     
     @objc func handleLongPress(gesture: UILongPressGestureRecognizer) {

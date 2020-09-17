@@ -24,6 +24,20 @@ extension FavoritesController: UICollectionViewDelegateFlowLayout {
         return cell
     }
     
+    override func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
+        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: FavoritesHeaderCollectionView.identifier, for: indexPath) as! FavoritesHeaderCollectionView
+        
+        headerView.configure()
+        
+        return headerView
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        
+        return self.meals.isEmpty == true ? CGSize(width: view.frame.size.width, height: 250) : CGSize(width: view.frame.size.width, height: 0)
+    }
+    
     override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
         let recipeDetailsVC = RecipeDetailsController()
         recipeDetailsVC.meal = self.meals[indexPath.item]
