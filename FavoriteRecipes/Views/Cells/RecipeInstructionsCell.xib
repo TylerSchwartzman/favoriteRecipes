@@ -8,15 +8,15 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
-        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="118" id="LZR-Vh-ncX" customClass="RecipeInstructionsCell" customModule="FavoriteRecipes" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="154" height="118"/>
+        <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="70" id="LZR-Vh-ncX" customClass="RecipeInstructionsCell" customModule="FavoriteRecipes" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="344" height="70"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="LZR-Vh-ncX" id="sKS-e9-vlv">
-                <rect key="frame" x="0.0" y="0.0" width="154" height="118"/>
+                <rect key="frame" x="0.0" y="0.0" width="344" height="70"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Instructions" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gCt-WK-Aiq">
-                        <rect key="frame" x="16" y="11" width="122" height="96"/>
+                        <rect key="frame" x="20" y="11" width="304" height="48"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
@@ -32,7 +32,7 @@
             <connections>
                 <outlet property="instructionsLabel" destination="gCt-WK-Aiq" id="6XT-Ua-RXh"/>
             </connections>
-            <point key="canvasLocation" x="-421.73913043478262" y="33.482142857142854"/>
+            <point key="canvasLocation" x="-284.05797101449275" y="17.410714285714285"/>
         </tableViewCell>
     </objects>
 </document>

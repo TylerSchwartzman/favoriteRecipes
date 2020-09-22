@@ -54,14 +54,13 @@ class RecipeSearchController: UICollectionViewController, UISearchBarDelegate {
         present(alertController, animated: true, completion: nil)
     }
     
-    let cellId = "cellId"
     let nib = UINib(nibName: "MealSearchFooterView", bundle: nil)
     fileprivate let layout = RecipeSearchLayout()
 
     fileprivate func setupCollectionView() {
         collectionView.backgroundColor = .coolGrey
         
-        collectionView.register(MealCollectionViewCell.self, forCellWithReuseIdentifier: cellId)
+        collectionView.register(MealCollectionViewCell.self, forCellWithReuseIdentifier: MealCollectionViewCell.reuseID)
         
         collectionView.register(SearchHeaderCollectionView.self,
                                 forSupplementaryViewOfKind: UICollectionView.elementKindSectionHeader,

@@ -11,6 +11,8 @@ import SDWebImage
 
 class MealCollectionViewCell: UICollectionViewCell {
     
+    static let reuseID = "reuseID"
+    
     var meal: Meal! {
         didSet {
             mealNameLabel.text = meal.strMeal

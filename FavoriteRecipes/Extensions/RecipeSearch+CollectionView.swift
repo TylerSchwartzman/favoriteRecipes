@@ -17,7 +17,7 @@ extension RecipeSearchController: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MealCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MealCollectionViewCell.reuseID, for: indexPath) as! MealCollectionViewCell
         let meal = self.meals[indexPath.row]
         cell.meal = meal
         

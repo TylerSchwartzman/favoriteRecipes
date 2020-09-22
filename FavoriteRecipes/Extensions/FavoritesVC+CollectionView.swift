@@ -17,7 +17,7 @@ extension FavoritesController: UICollectionViewDelegateFlowLayout {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: cellId, for: indexPath) as! MealCollectionViewCell
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: MealCollectionViewCell.reuseID, for: indexPath) as! MealCollectionViewCell
         
         cell.meal = self.meals[indexPath.item]
         
