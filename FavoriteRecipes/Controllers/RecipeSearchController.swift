@@ -48,6 +48,11 @@ class RecipeSearchController: UICollectionViewController, UISearchBarDelegate {
         })
     }
     
+    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
+        meals = []
+        collectionView.reloadData()
+    }
+    
     private func showError(title: String, message: String) {
         let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
         alertController.addAction(UIAlertAction(title: "Ok", style: .default, handler: nil))
@@ -55,7 +60,7 @@ class RecipeSearchController: UICollectionViewController, UISearchBarDelegate {
     }
     
     let nib = UINib(nibName: "MealSearchFooterView", bundle: nil)
-    fileprivate let layout = RecipeSearchLayout()
+    fileprivate let layout = CollectionViewFlowLayout()
 
     fileprivate func setupCollectionView() {
         collectionView.backgroundColor = .coolGrey

@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecipeSearchLayout: UICollectionViewFlowLayout {
+class CollectionViewFlowLayout: UICollectionViewFlowLayout {
     
     var cache: [UICollectionViewLayoutAttributes] = []
     
