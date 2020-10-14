@@ -9,7 +9,7 @@
 import UIKit
 import Alamofire
 
-class RecipeSearchController: UICollectionViewController, UISearchBarDelegate {
+class RecipeSearchController: UICollectionViewController {
     
     let searchController = UISearchController(searchResultsController: nil)
     
@@ -31,26 +31,6 @@ class RecipeSearchController: UICollectionViewController, UISearchBarDelegate {
         searchController.searchBar.delegate = self
         let textFieldInsideSearchBar = searchController.searchBar.value(forKey: "searchField") as? UITextField
         textFieldInsideSearchBar?.textColor = .offWhite
-    }
-    
-    var timer: Timer?
-    func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        
-        meals = []
-        collectionView.reloadData()
-        
-        timer?.invalidate()
-        timer = Timer.scheduledTimer(withTimeInterval: 0.5, repeats: false, block: { (timer) in
-            APIService.share.fetchMeals(searchText: searchText) { (meals) in
-                self.meals = meals
-                self.collectionView.reloadData()
-            }
-        })
-    }
-    
-    func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        meals = []
-        collectionView.reloadData()
     }
     
     private func showError(title: String, message: String) {
