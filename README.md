@@ -9,4 +9,4 @@ This iOS Application was developed by retrieving data from the mealDB API and us
 - I persisted the favorite recipes data by utilizing the UserDefaults Framework
 - Used CocoaPods to integrate the Alamofire and SDWebImage libraries for streamlining network requests and cache support for downloaded images
 
-![Simulator Screen Shot - iPhone 11 - 2021-04-07 at 18 56 56](https://user-images.githubusercontent.com/67024373/113948728-28014e80-97d3-11eb-9d28-35d06742cf0b.png)
+![Simulator Screen Shot - iPhone 11 - 2021-04-07 at 18 56 56](https://user-images.githubusercontent.com/67024373/113948728-28014e80-97d3-11eb-9d28-35d06742cf0b.png =250x250)
